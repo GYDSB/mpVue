@@ -7,6 +7,7 @@
         .time {{card.time}}
         .venue {{card.venue}}
         .price-wrap
+          image(:src="line",class="line")
           .price
             span.num 68
             span.qi 元
@@ -40,7 +41,7 @@
         position: relative;
         padding-bottom: 49px;
         .title{
-          margin-bottom: 12px;
+          margin-bottom: 10px;
           font-size: 16px;
           color: #262626;
         }
@@ -48,20 +49,30 @@
           font-size: 12px;
           color: #95949d;
         }
+        .line{
+          height:1px;
+          position:absolute;
+          top:0;
+
+        }
         .price-wrap{
           position: absolute;
           bottom: -3px;
           right: 12px;
-          line-height: 25px;
+          line-height: 30px;
           left: 12px;
           display: flex;
           justify-content: space-between;
+          padding-top: 10px;
+          border-top:1px dashed #efefef;
+
           .btn-remind{
             border-radius: 16.7px;
             width: 84px;
-            height: 25px;
-            line-height: 25px;
-            font-size: 12px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: 400;
             color: #fff;
             text-align: center;
             cursor: pointer;
@@ -87,7 +98,7 @@
       card:Object
     },
     data(){
-
+      line:'../../static/img/line.png'
     },
     methods:{
 

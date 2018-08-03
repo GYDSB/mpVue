@@ -9,6 +9,7 @@
 
   import Tab from '@/components/tab'
   import SeckillCard from '@/components/SeckillCard'
+  import request from '@/utils/request'
 
   export default {
     data () {
@@ -53,36 +54,25 @@
       SeckillCard, Tab
     },
     mounted () {
+      console.log('hello world')
       this.onSelect()
+
     },
     methods: {
       onSelect (index) {
         this.card = this.tabs[index || 0].activity
+        this.fetchPageData()
       },
-      bindViewTap () {
-        const url = '../logs/main'
-        wx.navigateTo({url})
-      },
-      getUserInfo () {
-        // 调用登录接口
-        wx.login({
-          success: () => {
-            wx.getUserInfo({
-              success: (res) => {
-                this.userInfo = res.userInfo
-              }
-            })
-          }
+      fetchPageData () {
+        console.log('dddddd',request)
+        request.get(`/v2/campaign/seckill?groupId=4`).then((res)=>{
+          console.log(res)
         })
-      },
-      clickHandle (msg, ev) {
-        console.log('clickHandle:', msg, ev)
       }
     },
 
     created () {
-      // 调用应用实例的方法获取全局数据
-      this.getUserInfo()
+
     }
   }
 </script>

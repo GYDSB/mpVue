@@ -1,6 +1,6 @@
 <template lang="jade">
   .tab-container
-    .tab-item(:class="{selected:active==index}",v-for="(tab,index) in tabs",
+    .tab-item(:class="{selected:selected==index}",v-for="(tab,index) in tabs",
     @click="selectTab(index)",class="tab-item",:key="index")
       .time {{tab.time}}
       .status 已过期
@@ -15,6 +15,11 @@
       padding: 0 20px;
       display: inline-block;
       text-align: center;
+      &.selected{
+        .time{
+          transform: scale(1.2);
+        }
+      }
       .time {
 
       }
@@ -29,7 +34,7 @@
       width: 30px;
       background-color: #ff0c51;
       bottom: -10px;
-      transition:left 0.1s ease-in;
+      transition:left 0.1s ease;
     }
   }
 </style>
