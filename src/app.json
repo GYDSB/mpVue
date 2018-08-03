@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/tabBar/home/main"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/index/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/logs/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/counter/",
+      "pages": [
+        "main"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
